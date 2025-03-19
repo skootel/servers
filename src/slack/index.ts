@@ -222,7 +222,7 @@ class SlackClient {
 
   async getChannels(limit: number = 100, cursor?: string): Promise<any> {
     const params = new URLSearchParams({
-      types: "public_channel",
+      types: "public_channel,private_channel",
       exclude_archived: "true",
       limit: Math.min(limit, 200).toString(),
       team_id: process.env.SLACK_TEAM_ID!,
